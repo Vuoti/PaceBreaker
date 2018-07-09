@@ -193,6 +193,18 @@ TCP Default: **192.168.0.150:1883**
 WS Default: **192.168.0.150:1884**
 
 
+## IP Adressen
+
+| Gerät              		| IP   					| Funktion									  |
+| ------------------------- | --------------------- | ------------------------------------------- |
+| Router					| 192.168.0.1			| Router Config (admin/admin)				  |
+| RaspberryPi				| 192.168.0.150			| Für Remote Zugriffe						  |
+| MQTT TCP Broker			| 192.168.0.150:1883	| Kommunikation ESP + Backend				  |
+| MQTT WS Broker			| 192.168.0.150:1884	| Kommunikation Backend + Frondend			  |
+| User Interface Pfleger	| 192.168.0.150:8080	| Eingabemaske für Pfleger, startet Session	  |
+| Audio Stream				| 192.168.0.150:3000	| Quelle für den MP3 Stream					  |
+
+
 ## Befehle
 
 ### Schnitzeljagd starten
