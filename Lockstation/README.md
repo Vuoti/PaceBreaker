@@ -13,7 +13,9 @@ Eine Lockstation besteht aus folgenden Komponenten
 * Jumper Wire
 * Micro USB Kabel
 
-SCHALTPLAN
+**SCHALTPLAN**
+![alt text](schaltplan.png "Schaltplan Lockstation")
+
 
 ## Nutzung
 
@@ -27,7 +29,9 @@ Default: **192.168.0.150:1883**
 Nummer der Lockstation angeben, derzeit mit Suchen und Ersetzen.
 Suchen **"lockstation0"**, ersetzen **"lockstation1"**
 
-#### MQTT Subscribe
+### MQTT Befehle
+
+#### Subscribe
 | Topic                       | Value    | Description                                                   |
 | --------------------------- | -------- | ------------------------------------------------------------- |
 | lockstation0/active         | bool     | Aktiviert/Deaktiviert Sound und Bewegungsmelder |
@@ -37,7 +41,7 @@ Suchen **"lockstation0"**, ersetzen **"lockstation1"**
 | lockstation0/isAlive        | true     | Station gibt ein Lebenszeichen von sich (lockstation#/debug) |
 | lockstation0/restart        | true     | ESP startet neu |
 
-#### MQTT Publish
+#### Publish
 | Topic                       | Value    | Description                                                   |
 | --------------------------- | -------- | ------------------------------------------------------------- |
 | lockstation0/animalInFront  | true     | Wenn die Station aktiv ist und eine Bewegung registriert |
