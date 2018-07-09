@@ -15,10 +15,13 @@ Das Interface besteht aus folgenden Komponenten
 * [7’ LCD Touchscreen Display](https://www.amazon.de/gp/product/B008AESDSY/ref=oh_aui_detailpage_o01_s00?ie=UTF8&psc=1)
 * Micro USB Netzteil (2x)
 
+
 ## Installation
+
 ### OS Raspbian Stretch mit Desktop
 [Raspbian Stretch](https://www.raspberrypi.org/downloads/raspbian/
 ) auf eine 32 GB Karte installieren
+
 
 ### Grundeinstellungen
 ``` sudo raspi-config ```
@@ -35,6 +38,7 @@ Das Interface besteht aus folgenden Komponenten
 
 → Wifi Country
 
+
 ### Wlan einrichten
 ``` sudo nano /etc/wpa_supplicant/wpa_supplicant.conf ```
 ```
@@ -44,8 +48,10 @@ psk="miauzgenau"
 }
 ```
 
+
 ### System Uhrzeit von automatisch auf manuell umstellen
 ``` hwclock –systohc ```
+
 
 ### [Samba](https://www.raspberrypi.org/magpi/samba-file-server/) installieren
 ``` sudo apt-get update ```
@@ -75,6 +81,7 @@ Guest ok = yes
 
 ``` sudo /etc/init.d/samba restart ```
 
+
 ### [OpenCV](https://opencv.org/releases.html) installieren
 ``` sudo apt-get update && sudo apt-get upgrade ```
 
@@ -96,18 +103,22 @@ git clone https://github.com/Itseez/opencv.git && cd opencv && git checkout 3.0.
 
 ``` sudo make install && sudo ldconfig ```
 
+
 ### [Timelapse Motion Heatmap](https://github.com/LINKIWI/time-lapse-motion-heatmap) installieren
 ``` pip install scipy ```
 
 ``` cd ~ && git clone https://github.com/LINKIWI/time-lapse-motion-heatmap ```
+
 
 ### [Node.js 10.x installieren](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions) installieren
 ``` curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash - ```
 
 ``` sudo apt-get install -y nodejs ```
 
+
 ### Http-server installieren
 ``` npm install http-server -g ```
+
 
 ### Mosquitto installieren
 ``` sudo apt-get install -y mosquitto mosquitto-clients ```
@@ -122,55 +133,79 @@ listener 1884
 protocol websockets
 ```
 
-## Nutzung
 
-### Konfiguration
-**Router anschließen und mit dem Wlan “Fossa-Funk” verbinden**
+## Konfiguration
+
+### Router anschließen und mit dem Wlan “Fossa-Funk” verbinden
 Wlan SSID und Passwort anpassen
 Default: **Fossa-Funk** *miauzgenau*
 
-**Über ssh mit dem Pi verbinden - ip Adresse 192.168.0.150**
-Login: **pi** *fossa*
+
+### Über ssh mit dem Pi verbinden - ip Adresse 192.168.0.150
+Login: ```pi``` ```fossa```
+
 Mit Mac ```ssh pi@192.168.0.150```
+
 Mit Windows das Programm Putty verwenden
 
-**Audio Stream starten**
+
+### Audio Stream starten
 ``` cd ~/share/audioStream ```
+
 ``` http-server -p 3000 ```
+
 → Im Browser unter der Adresse 192.168.0.150:3000/Sichelschnabelvanga.mp3 müsste jetzt das .mp3 file abgespielt werden.
+
 ⚠ Das Fenster solange offen lassen wie das System laufen soll. Für weitere Befehle auf dem Pi eine neue Session/neues Consolenfenster öffnen.
 
-**Datum und Uhrzeit einstellen**
+
+### Datum und Uhrzeit einstellen
 ``` sudo date MMDDhhmmYY ``` ( zB 0630122918 )
+
 → Bei dem Befehl “date” müsste nun die aktuelle Uhrzeit und Datum ausgegeben werden
 
-**Frontend starten**
+
+### Frontend starten
 ``` cd ~/share/PaceBreakerFrontend ```
+
 ``` http-server ```
+
 → Im Browser unter der Adresse 192.168.0.150:8080 müsste nun das User Interface erreichbar sein
+
 ⚠ Das Fenster solange offen lassen wie das System laufen soll. Für weitere Befehle auf dem Pi eine neue Session/neues Consolenfenster öffnen.
 
-**Backend starten**
+
+### Backend starten
 ``` cd ~/share/NodeFeedingTimer ```
+
 ``` node UserInterface.js ```
+
 → Müsste auf die Befehle vom UserInterface (192.168.0.150:8080) reagieren und eine Session starten
+
 ⚠ Das Fenster solange offen lassen wie das System laufen soll. Für weitere Befehle auf dem Pi eine neue Session/neues Consolenfenster öffnen.
 
-**MQTT Broker**
+
+### MQTT Broker
 Es wird automatisch ein MQTT Broker gestartet
+
 TCP Default: **192.168.0.150:1883**
+
 WS Default: **192.168.0.150:1884**
 
 
-### Befehle
-**Schnitzeljagd starten**
+## Befehle
+
+### Schnitzeljagd starten
 Die Schnitzeljagd kann über das Interface, erreichbar im Browser unter 192.168.0.150:8080 gestartet werden.
 
-**Heatmap generieren**
+### Heatmap generieren
 Zur Erstellung einer Heatmap werden mindestens 20 Bilder benötigt.
 ``` source ~/.profile ```
+
 ``` workon cv ```
+
 ``` cd ~/share/Heatmap ```
+
 ``` python generateHeatmap.py ```
 
 ## To-Do
