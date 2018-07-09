@@ -1,0 +1,16 @@
+{
+  "name": "nodefeedingtimer",
+  "version": "1.0.0",
+  "main": "Main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "minimist": "^1.2.0",
+    "mqtt": "^2.18.1",
+    "node-run-cmd": "^1.0.1"
+  }
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Grid Layout, from LayoutIt!</title>
+
+    <meta name="description" content="Source code generated using layoutit.com">
+    <meta name="author" content="LayoutIt!">
+
+    <link href="css/grid-layout.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+  </head>
+  <body>
+
+    <div class="grid-container">
+      <div class="StartTime">
+        <p>
+          StartTime
+        </p>
+        <input id="startTime" type="number" value="13.0"/>
+      </div>
+      <div class="EndTime">
+        <p>
+          EndTime
+        </p>
+        <input id="endTime" type="number" value="14.0" />
+      </div>
+      <div class="BreakTimes">
+        <p>
+          BreakTimes
+        </p>
+        <input id="breakTime" type="number" />
+        <button id="breakTimeBtn" type="button">Add</button>
+      </div>
+      <div class="HowMany">
+        <p>
+          HowManySessions
+        </p>
+        <input id="howManySessions" type="number" value="5" />
+      </div>
+      <div class="StationCount">
+        <p>
+          StationCount
+        </p>
+        <input id="stationCount" type="number" value="5" />
+      </div>
+      <div class="Order">
+        <p>
+          Order
+        </p>
+        <input id="order" type="checkbox" value="random" checked="checked" /> Random
+      </div>
+      <div class="TimeBetween">
+        <p>
+          TimeBetweenCatches
+        </p>
+        <input id="timeBetweenCatches" type="number" value="5000" />
+      </div>
+      <div class="SoundUrl">
+        <p>
+          SoundURL
+        </p>
+        <input id="soundURL" type="url" value="/sound.mp3"/>
+      </div>
+      <div class="Time">
+        <p>
+          Current Time (only needs to be set after pi start)
+        </p>
+        <input id="currentTime" type="numer" value="13:15:00"/>
+        <button id="setTimeBtn" type="text">Set</button>
+      </div>
+      <div class="Start">
+        <p>
+          Start
+        </p>
+        <button id="startBtn" type="button">Start</button>
+        <button id="stopBtn" type="button">Stop</button>
+      </div>
+    </div>
+    <p id="consoleLog">
+    </p>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+.grid-container {
+  display: grid;
+  height: 100%;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: "StartTime EndTime BreakTimes BreakTimes" "HowMany HowMany StationCount Order" "TimeBetween SoundUrl Start Start";
+}
+
+.StartTime {
+  grid-area: StartTime;
+}
+
+.EndTime {
+  grid-area: EndTime;
+}
+
+.BreakTimes {
+  grid-area: BreakTimes;
+}
+
+.HowMany {
+  grid-area: HowMany;
+}
+
+.StationCount {
+  grid-area: StationCount;
+}
+
+.Order {
+  grid-area: Order;
+}
+
+.TimeBetween {
+  grid-area: TimeBetween;
+}
+
+.SoundUrl {
+  grid-area: SoundUrl;
+}
+
+.Start {
+  grid-area: Start;
+}
+
