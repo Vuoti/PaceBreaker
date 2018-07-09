@@ -19,8 +19,9 @@ Um das Backend zu nutzen, bitte den folgenden Schritten folgen:
 ## Struktur
 Das Backend basiert auf den folgenden Files:
 
+
 | Filename              		| Funktionen    |
-| ------------------------- | -------- | ------------------------------------------------------------- |
+| ----------------------------- | ------------- |
 | **UserInterface.js** | Code der händisch (oder im Autostart) gestartet werden muss. Startet, wenn vom Frontend dazu aufgefordert, die Main.js und übergibt ihr die vom Pfleger eingestellten (und per MQTT empfangenen) Werte als Arguments. |
 | **Main.js**    		| Hauptcode. Erstellt die Jagt Sessions anhand der ihr übergebenen Arguments und führt diese über das Session-Callback aus.   |
 | Session.js  |  Definiert wie eine Jagt-Session und die Sammlung von mehreren Sessions über einen Tag hinweg (Daily-Session) funktioniert. Wenn eine Jagt-Session beginnt, ruft diese das Callback auf, welches in Main.js definiert, wie die Jagt ablaufen soll. |
