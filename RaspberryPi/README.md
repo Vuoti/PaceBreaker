@@ -16,11 +16,11 @@ Das Interface besteht aus folgenden Komponenten
 * Micro USB Netzteil (2x)
 
 ## Installation
-###OS Raspbian Stretch mit Desktop###
+### OS Raspbian Stretch mit Desktop
 [Raspbian Stretch](https://www.raspberrypi.org/downloads/raspbian/
 ) auf eine 32 GB Karte installieren
 
-###Grundeinstellungen###
+### Grundeinstellungen
 ``` sudo raspi-config ```
 
 → Expand Filesystem
@@ -35,7 +35,7 @@ Das Interface besteht aus folgenden Komponenten
 
 → Wifi Country
 
-###Wlan einrichten###
+### Wlan einrichten
 ``` sudo nano /etc/wpa_supplicant/wpa_supplicant.conf ```
 ```
 network={
