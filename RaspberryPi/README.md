@@ -10,26 +10,32 @@ Das Backend berechnet eigenständig die Jagdzeiten, wählt eine zufällige Reihe
 Darüber hinaus findet eine Analyse von stereotypischem Verhalten in Form einer Heatmap statt.
 
 ## Aufbau
-Eine Lockstation besteht aus folgenden Komponenten
+Das Interface besteht aus folgenden Komponenten
 * [Raspberry Pi 3 (Model B+) mit WLAN](https://www.amazon.de/gp/product/B071JR9WS9/ref=oh_aui_detailpage_o03_s00?ie=UTF8&psc=1)
 * [7’ LCD Touchscreen Display](https://www.amazon.de/gp/product/B008AESDSY/ref=oh_aui_detailpage_o01_s00?ie=UTF8&psc=1)
 * Micro USB Netzteil (2x)
 
-## Instalation
-**OS Raspbian Stretch mit Desktop**
+## Installation
+###OS Raspbian Stretch mit Desktop###
 [Raspbian Stretch](https://www.raspberrypi.org/downloads/raspbian/
 ) auf eine 32 GB Karte installieren
 
-**Grundeinstellungen**
+###Grundeinstellungen###
 ``` sudo raspi-config ```
+
 → Expand Filesystem
+
 → Change User Password
+
 → Enable Camera
+
 → Deutsche Tastatureinstellungen
+
 → Zeitzone Berlin
+
 → Wifi Country
 
-**Wlan einrichten**
+###Wlan einrichten###
 ``` sudo nano /etc/wpa_supplicant/wpa_supplicant.conf ```
 ```
 network={
