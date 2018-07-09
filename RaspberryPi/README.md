@@ -200,6 +200,7 @@ Die Schnitzeljagd kann über das Interface, erreichbar im Browser unter 192.168.
 
 ### Heatmap generieren
 Zur Erstellung einer Heatmap werden mindestens 20 Bilder benötigt.
+
 ``` source ~/.profile ```
 
 ``` workon cv ```
