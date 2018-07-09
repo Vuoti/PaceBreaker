@@ -44,15 +44,20 @@ psk="miauzgenau"
 }
 ```
 
-**System Uhrzeit von automatisch auf manuell umstellen**
+### System Uhrzeit von automatisch auf manuell umstellen
 ``` hwclock –systohc ```
 
-**[Samba](https://www.raspberrypi.org/magpi/samba-file-server/) installieren**
+### [Samba](https://www.raspberrypi.org/magpi/samba-file-server/) installieren
 ``` sudo apt-get update ```
+
 ``` sudo apt-get upgrade ```
+
 ``` sudo apt-get install samba samba-common-bin ```
+
 ``` sudo mkdir -m 1777 /share ```
+
 ``` sudo nano /etc/samba/smb.conf ```
+
 ``` 
 [share]
 Comment = Pi shared folder
@@ -65,37 +70,52 @@ directory mask = 0777
 Public = yes
 Guest ok = yes
 ```
+
 ``` sudo smbpasswd -a pi ```
+
 ``` sudo /etc/init.d/samba restart ```
 
-**[OpenCV](https://opencv.org/releases.html) installieren**
+### [OpenCV](https://opencv.org/releases.html) installieren
 ``` sudo apt-get update && sudo apt-get upgrade ```
+
 ``` sudo apt-get install build-essential libgdk-pixbuf2.0-dev libpango1.0-dev libcairo2-dev git cmake pkg-config libjpeg8-dev libjasper-dev libpng12-dev libavcodec-dev libavformat-dev libswscale-dev libv4l-dev libgtk2.0-dev libatlas-base-dev gfortran -y
 git clone https://github.com/Itseez/opencv.git && cd opencv && git checkout 3.0.0
  ```
+
 ``` sudo apt-get install python2.7-dev ```
+
 ``` cd ~ && wget https://bootstrap.pypa.io/get-pip.py && sudo python get-pip.py ```
+
 ``` pip install numpy ```
+
 ``` cd ~/opencv && mkdir build && cd build ```
+
 ``` cmake -D CMAKE_BUILD_TYPE=RELEASE \ -D CMAKE_INSTALL_PREFIX=/usr/local \ -D INSTALL_PYTHON_EXAMPLES=ON \ -D INSTALL_C_EXAMPLES=ON \ -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules \ -D BUILD_EXAMPLES=ON .. ```
+
 ``` make -j4 ```
+
 ``` sudo make install && sudo ldconfig ```
 
-**[Timelapse Motion Heatmap](https://github.com/LINKIWI/time-lapse-motion-heatmap) installieren**
+### [Timelapse Motion Heatmap](https://github.com/LINKIWI/time-lapse-motion-heatmap) installieren
 ``` pip install scipy ```
+
 ``` cd ~ && git clone https://github.com/LINKIWI/time-lapse-motion-heatmap ```
 
-**[Node.js 10.x installieren](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions) installieren**
+### [Node.js 10.x installieren](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions) installieren
 ``` curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash - ```
+
 ``` sudo apt-get install -y nodejs ```
 
-**Http-server installieren**
+### Http-server installieren
 ``` npm install http-server -g ```
 
-**Mosquitto installieren**
+### Mosquitto installieren
 ``` sudo apt-get install -y mosquitto mosquitto-clients ```
+
 ``` cd/etc/mosquitto ```
+
 ``` sudo nano mosquitto.conf ```
+
 ``` 
 listener 1883
 listener 1884
