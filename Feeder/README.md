@@ -1,7 +1,7 @@
 # Feeder
 
 ## Funktion
-Der ESP verbindet sich über WLAN mit dem Netzwerk "Fossa-Funk" und erwartet über Mqtt Befehle. Durch einen Post in den Channel "feeder/active" mit der Message "true", wird der AudioStream gestartet und über den Lautsprecher ausgegeben. Gleichzeitig wird der Motor mit Strom versorgt wodurch sich die Futterschale zu drehen beginnt. Im Normalfall stoppt der Motor nach einer viertel Drehung, sodass ein neues Futterfach freigegeben wird.
+Der ESP verbindet sich über WLAN mit dem Netzwerk "Fossa-Funk" und erwartet über Mqtt Befehle. Durch einen Post in den Channel "feeder/active" mit der Message "true", wird der AudioStream gestartet und über den Lautsprecher ausgegeben. Gleichzeitig wird der Motor mit Strom versorgt wodurch sich die Futterschale zu drehen beginnt. Im Normalfall stoppt der Motor nach einer viertel Drehung, sodass ein neues Futterfach freigegeben wird. Ist "turningTimeActive" auf true gesetzt kann die Zeit die der Motor drehen soll selbst bestimmt werden. Dadurch lässt sich zum Beispiel die Futterschale korrekt ausrichten, oder eine volle Umdrehung durchführen.
 
 ## Aufbau
 Der Feeder besteht aus folgenden Komponenten
